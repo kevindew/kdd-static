@@ -1,0 +1,28 @@
+.reveal
+  letter-spacing: 0
+
+.reveal .controls div
+  opacity: 0.1
+
+.reveal .progress
+  top: 0
+  bottom: auto
+  height: 5px
+  background: lighten($etchSalmon, 25%)
+
+.reveal p,
+.reveal .slides > section,
+.reveal .slides > section > section
+  line-height: 1.7
+
+.reveal .slides section .fragment.grow
+  opacity: 0
+  &.visible
+    opacity: 1
+
+.reveal section img, .reveal a:hover img
+  box-shadow: none
+
+.reveal blockquote
+  border: 0
+  background-color: #eee

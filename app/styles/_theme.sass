@@ -1,0 +1,38 @@
+// Base settings for all themes that can optionally be
+// overridden by the super-theme
+
+// Background of the presentation
+$backgroundColor: white
+
+// Primary/body text
+$mainFont: 'Courier New', monospace
+$mainFontSize: 36px
+$mainColor: #666
+
+$etchSalmon: #FF6666
+
+// Headings
+$headingMargin: 0 0 20px 0
+$headingFont: 'Courier New', monospace
+$headingColor: #333
+$headingLineHeight: 1.2
+$headingLetterSpacing: 0
+$headingTextTransform: none
+$headingTextShadow: none
+$heading1TextShadow: $headingTextShadow
+
+// Links and actions
+$linkColor: $etchSalmon
+$linkColorHover: lighten($linkColor, 10%)
+
+// Text selection
+$selectionBackgroundColor: $etchSalmon
+$selectionColor: white
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground()
+  background: $backgroundColor
+
+@import 'reveal.js/css/theme/template/mixins'
+@import 'reveal.js/css/theme/template/theme'

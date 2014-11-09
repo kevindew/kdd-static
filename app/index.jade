@@ -1,0 +1,28 @@
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title F' the B'end
+    meta(name='description', content='')
+    meta(name='viewport',content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+
+    // build:css({.,app,.tmp}) /styles/main.css
+    link(rel='stylesheet', href='/bower_components/reveal.js/css/reveal.css')
+    link(rel='stylesheet', href='/styles/main.css')
+    // endbuild
+
+    //- link(rel='shortcut icon',href='/favicon.ico')
+    //- link(rel='apple-touch-icon-precomposed',href='/apple-touch-icon.png')
+  body
+    .reveal
+      .slides
+        include slides/_title
+        include slides/_intro
+        include slides/_great-for
+        include slides/_limitations
+
+    // build:js({.,app,.tmp}) /scripts/footer.js
+    script(src='/bower_components/reveal.js/js/reveal.js')
+    script(src='/scripts/main.js')
+    // endbuild
