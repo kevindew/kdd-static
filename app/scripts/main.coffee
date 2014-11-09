@@ -5,3 +5,8 @@ Reveal.initialize
   center: false,
 
   transition: Reveal.getQueryHash().transition || 'linear'
+
+twemoji.parse document.body,
+  size: 72
+  folder: 'svg'
+  ext: '.svg'

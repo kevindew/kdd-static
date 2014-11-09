@@ -17,8 +17,8 @@ module.exports = function (grunt) {
     app: 'app',
     preview: 'preview',
     dist: 'dist',
-    awsJsonPath: 'aws.json',
-    ftpJsonPath: 'ftp.json'
+    awsJsonPath: '.aws.json',
+    ftpJsonPath: '.ftp.json'
   };
 
   var aws = {};
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
       ('Warning - you don\'t have a ' + config.awsJsonPath + ' file, please generate one by running `grunt generate:awsJson`').yellow
     );
   }
-  
+
   if (!grunt.file.exists(config.ftpJsonPath)) {
     grunt.log.warn(
       ('Warning - you don\'t have a ' + config.ftpJsonPath + ' file, please generate one by running `grunt generate:ftpJson`').yellow
@@ -357,13 +357,13 @@ module.exports = function (grunt) {
           dot: true,
           cwd: '.tmp',
           dest: config.dist,
-          src: 'images/**/*.{gif,jpeg,jpg,png,.svg}',
+          src: 'images/**/*.{gif,jpeg,jpg,png,svg}',
         }, {
           expand: true,
           dot: true,
           cwd: '.',
           dest: config.dist,
-          src: 'bower_components/**/*.{eot,woff,woff2,svg,ttf}',
+          src: 'bower_components/**/*.{eot,woff,woff2,svg,ttf,gif,jpeg,jpg,png}',
         }]
       },
       distHtml: {
@@ -400,7 +400,7 @@ module.exports = function (grunt) {
           cwd: '.tmp',
           dest: config.preview,
           src: [
-            'images/**/*.{gif,jpeg,jpg,png,.svg}',
+            'images/**/*.{gif,jpeg,jpg,png,svg}',
             '**/*.html',
             'styles/**/*.css',
             'scripts/**/*.js'
@@ -479,7 +479,7 @@ module.exports = function (grunt) {
             'styles/**/*.css',
             'images/**/*.*',
             'styles/fonts/**/*.*',
-            'bower_components/**/*.{eot,woff,woff2,svg,ttf}'
+            'bower_components/**/*.{eot,woff,woff2,svg,ttf,gif,jgp,jpeg,png}'
           ],
           dest: '',
           params: {
@@ -494,7 +494,7 @@ module.exports = function (grunt) {
             '!styles/**/*.css',
             '!images/**/*.*',
             '!styles/fonts/**/*.*',
-            '!bower_components/**/*.{eot,woff,woff2,svg,ttf}'
+            '!bower_components/**/*.{eot,woff,woff2,svg,ttf,gif,jgp,jpeg,png}'
           ],
           dest: ''
         }]
