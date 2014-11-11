@@ -9,6 +9,7 @@ html(lang='en')
 
     // build:css({.,app,.tmp}) /styles/main.css
     link(rel='stylesheet', href='/bower_components/reveal.js/css/reveal.css')
+    link(rel='stylesheet', href='/bower_components/reveal.js/lib/css/zenburn.css')
     link(rel='stylesheet', href='/styles/main.css')
     // endbuild
 
@@ -22,10 +23,15 @@ html(lang='en')
         include slides/_great-for
         include slides/_limitations
         include slides/_process
-        include slides/_projects
+        include slides/_projects-task-runners
+        include slides/_projects-static-site-generators
+        include slides/_simple-static-title
+        include slides/_simple-static-stack
+        include slides/_simple-static-dir
 
     // build:js({.,app,.tmp}) /scripts/footer.js
     script(src='/bower_components/reveal.js/js/reveal.js')
+    script(src='/bower_components/reveal.js/plugin/highlight/highlight.js')
     script(src='/bower_components/twemoji/twemoji.js')
     script(src='/scripts/main.js')
     // endbuild
