@@ -35,10 +35,20 @@
   border: 0
   background-color: #eee
 
+.reveal pre
+  padding: 0.5em
+  display: block
+  padding: 0.5em
+  background: #3F3F3F
+  color: #DCDCDC
+  box-shadow: none
 
 .reveal pre code
   max-height: none
-  padding: 0.5em
 
-.reveal pre
-  box-shadow: none
+.reveal .slides section .fragment.reduce-opacity
+  opacity: 1
+  .reduce
+    transition: all .2s linear
+  &.visible .reduce
+    opacity: 0.6
