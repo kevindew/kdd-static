@@ -1,0 +1,15 @@
+section.slide-globbing
+  h2 Globbing
+  p.
+    To get the most out of Grunt/Gulp you need to understand
+    #[a(href='http://en.wikipedia.org/wiki/Glob_(programming)') globbing]
+    and #[a(href='https://github.com/isaacs/minimatch') minimatch] for file matching.
+  pre
+    code.javascript.
+      var minimatch = require("minimatch")
+
+      minimatch('bar.foo', '*.foo') // true!
+      minimatch('bar.foo', '*.bar') // false!
+
+
+

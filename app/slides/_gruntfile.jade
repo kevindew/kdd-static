@@ -1,0 +1,28 @@
+section.slide-gruntfile
+  h2 gruntfile.js
+  pre
+    code.javascript.
+      module.exports = function (grunt) {
+        // load task dependencies
+        require('load-grunt-tasks')(grunt);
+
+        grunt.initConfig({
+          task: {
+            target: {
+              files: [{
+                expand: true,
+                cwd: 'path/to/dir',
+                src: '{,*/}*.ext',
+                dest: '.tmp/dir',
+                ext: '.new_ext'
+              }]
+            }
+          } // many, many more tasks...
+        });
+
+        grunt.registerTask('customTask', function(target) {
+            grunt.task.run('taskA', 'taskB');
+        });
+
+        // more custom tasks...
+      };
