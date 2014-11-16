@@ -226,7 +226,8 @@ module.exports = function (grunt) {
             '<%= config.dist %>/scripts/**/*.js',
             '<%= config.dist %>/styles/**/*.css',
             '<%= config.dist %>/images/**/*.*',
-            '<%= config.dist %>/styles/fonts/**/*.*'
+            '<%= config.dist %>/styles/fonts/**/*.*',
+            '<%= config.dist %>/bower_components/*/**/*.*'
           ]
         }
       }
@@ -344,13 +345,16 @@ module.exports = function (grunt) {
           dot: true,
           cwd: '.tmp',
           dest: config.dist,
-          src: 'images/**/*.{gif,jpeg,jpg,png,svg}',
+          src: 'images/**/*.{gif,jpeg,jpg,png,svg}'
         }, {
           expand: true,
           dot: true,
           cwd: '.',
           dest: config.dist,
-          src: 'bower_components/**/*.{eot,woff,woff2,svg,ttf,gif,jpeg,jpg,png}',
+          src: [
+            'bower_components/**/*.{eot,woff,woff2,svg,ttf,gif,jpeg,jpg,png}',
+            '!bower_components/twemoji/**/*.{png,svg}',
+          ]
         }]
       },
       distHtml: {
@@ -397,7 +401,11 @@ module.exports = function (grunt) {
           dot: true,
           cwd: '.',
           dest: config.preview,
-          src: 'bower_components/**/*',
+          src: [
+            'bower_components/**/*',
+            '!bower_components/twemoji/{16x16,36x36,72x72,assets,svg}/*',
+            '!bower_components/modernizr/media/*'
+          ]
         }]
       },
       styles: {
@@ -436,7 +444,7 @@ module.exports = function (grunt) {
       },
       preview: {
         options: {
-          bucket: 'preview-bucket'
+          bucket: 'kdd-static-preview'
         },
         files: [{
           expand: true,
@@ -447,7 +455,7 @@ module.exports = function (grunt) {
       },
       cleanPreview: {
         options: {
-          bucket: 'preview-bucket'
+          bucket: 'kdd-static-preview'
         },
         files: [{
           dest: '/',
@@ -456,7 +464,7 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          bucket: 'dist-bucket'
+          bucket: 'kdd-static'
         },
         files: [{
           expand: true,
@@ -488,7 +496,7 @@ module.exports = function (grunt) {
       },
       cleanDist: {
         options: {
-          bucket: 'dist-bucket'
+          bucket: 'kdd-static'
         },
         files: [{
           dest: '/',
@@ -500,23 +508,13 @@ module.exports = function (grunt) {
     'ftp-deploy': {
       preview: {
         auth: {
-          host: 'example.com',
+          host: 'rb-dev.co.uk',
           port: 21,
           authPath: config.ftpJsonPath,
           authKey: 'preview'
         },
         src: config.preview,
-        dest: 'httpdocs' // destination on server
-      },
-      dist: {
-        auth: {
-          host: 'example.com',
-          port: 21,
-          authPath: config.ftpJsonPath,
-          authKey: 'dist'
-        },
-        src: config.dist,
-        dest: 'httpdocs' // destination on server
+        dest: 'kdd-preview'
       }
     },
 

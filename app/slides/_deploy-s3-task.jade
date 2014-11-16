@@ -1,0 +1,31 @@
+section.slide-deploy-s3-task
+  h2 Deploy to #[abbr(title='Amazon Web Services') AWS] S3
+
+  h4.pre-description .aws.json
+  pre
+    code.json.
+      {
+        "AWSAccessKeyId": "Your Access Key",
+        "AWSSecretKey": "Your Secret Key"
+      }
+
+  h4.pre-description Build and deploy task
+  pre
+    code.javascript.
+      grunt.registerTask('s3Deploy', function(target) {
+        if (target === 'preview') {
+          return grunt.task.run(
+            'build:preview',
+            'aws_s3:cleanPreview',
+            'aws_s3:preview'
+          );
+        }
+        grunt.task.run(
+          'build:dist',
+          'aws_s3:cleanDist',
+          'aws_s3:dist'
+        );
+      });
+
+  pre
+    $ grunt:s3Deploy:preview

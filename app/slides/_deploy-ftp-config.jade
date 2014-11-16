@@ -1,0 +1,26 @@
+section.slide-deploy-ftp-config
+  h2 Deploy via FTP
+  h4.pre-description gruntfile.js
+  pre
+    code.javascript.
+      // Gruntfile config
+      var config = {
+        // ...
+        preview: 'preview',
+        // ...
+        ftpJsonPath: '.ftp.json'
+      };
+  pre
+    code.javascript.
+      'ftp-deploy': {
+        preview: {
+          auth: {
+            host: 'rb-dev.co.uk',
+            port: 21,
+            authPath: config.ftpJsonPath,
+            authKey: 'preview'
+          },
+          src: config.preview,
+          dest: 'kdd-preview'
+        }
+      }

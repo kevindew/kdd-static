@@ -1,0 +1,31 @@
+section.slide-deploy-ftp-task
+  h2 Deploy via FTP
+
+  h4.pre-description .ftp.json
+  pre
+    code.json.
+      {
+        "preview": {
+          "username": "xxxxxx",
+          "password": "xxxxxx"
+        }
+      }
+
+  h4.pre-description Build and deploy task
+  pre
+    code.javascript.
+      grunt.registerTask('ftpDeploy', function(target) {
+        if (target === 'preview') {
+          return grunt.task.run(
+            'build:preview',
+            'ftp-deploy:preview'
+          );
+        }
+        grunt.task.run(
+          'build:dist',
+          'ftp-deploy:dist'
+        );
+      });
+
+  pre
+    $ grunt:ftpDeploy:preview

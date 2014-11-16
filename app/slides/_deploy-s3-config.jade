@@ -1,0 +1,55 @@
+section.slide-deploy-s3-config
+  h2 Deploy to #[abbr(title='Amazon Web Services') AWS] S3
+  h4.pre-description gruntfile.js
+  pre
+    code(style='max-height:500px').javascript.
+      aws_s3: {
+        options: {
+          accessKeyId: aws.AWSAccessKeyId,
+          secretAccessKey: aws.AWSSecretKey,
+          region: 'eu-west-1',
+          uploadConcurrency: 5,
+          downloadConcurrency: 5
+        },
+        dist: {
+          options: {
+            bucket: 'dist-bucket'
+          },
+          files: [{
+            expand: true,
+            cwd: config.dist,
+            src: [
+              'scripts/**/*.js',
+              'styles/**/*.css',
+              'images/**/*.*',
+              'styles/fonts/**/*.*',
+              'bower_components/**/*.{eot,woff,woff2,svg,ttf,gif,jgp,jpeg,png}'
+            ],
+            dest: '',
+            params: {
+              CacheControl: 'max-age=' + (60 * 60 * 24 * 28).toString()
+            }
+          },{
+            expand: true,
+            cwd: '<%= config.dist %>',
+            src: [
+              '**',
+              '!scripts/**/*.js',
+              '!styles/**/*.css',
+              '!images/**/*.*',
+              '!styles/fonts/**/*.*',
+              '!bower_components/**/*.{eot,woff,woff2,svg,ttf,gif,jgp,jpeg,png}'
+            ],
+            dest: ''
+          }]
+        },
+        cleanDist: {
+          options: {
+            bucket: 'dist-bucket'
+          },
+          files: [{
+            dest: '/',
+            action: 'delete'
+          }]
+        }
+      },
