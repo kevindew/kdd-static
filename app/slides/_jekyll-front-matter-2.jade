@@ -1,0 +1,15 @@
+section.slide-jekyll-front-matter
+  h2 Front Matter
+  p.
+    Jekyll uses or sets the following variables: #[br]
+    #[strong layout], #[strong permalink], #[strong published],
+    #[strong category], #[strong categories], #[strong tags],
+    #[strong date].
+
+  .fragment
+    p.pre-description Any other variables used can be accessed in templates.
+
+    pre
+      code.html.
+        &lt;img src="{{ post.gif }}" alt="{{ post.gif_alt }}" title="{{ post.gif_title }}"&gt;
+        &lt;p&gt;&lt;small&gt;Current Status: &lt;em&gt;{{ post.gif_title }}&lt;/em&gt;&lt;/small&gt;&lt;/p&gt;

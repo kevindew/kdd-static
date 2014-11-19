@@ -1,0 +1,16 @@
+section.slide-jekyll-pagination
+  h2 Comments
+  p A comment system is no bother either since they&rsquo;re normally managed externally these days.
+
+  h4.pre-description _layouts/post.html
+  pre
+    code.html.
+      &lt;div id="disqus_thread"&gt;&lt;/div&gt;
+      &lt;script type="text/javascript"&gt;
+        var disqus_shortname = 'adiyfailure';
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      &lt;/script&gt;
