@@ -1,0 +1,23 @@
+section.slide-jekyll-turbo-responsive-images
+  h2 Responsive Images
+
+  h3.pre-description Usage
+  pre.
+    {% picture post_summary_thumbnail
+               {{ post.thumbnail }}
+               class="post-summary-image"
+               alt="{{ post.thumbnail_alt }}" %}
+
+  h3.pre-description Output
+  pre
+    code.html.
+      &lt;img src="/generated-images/journal/lomography-in-rome/rome-lomo-1-320by320-53a209.jpg"
+           srcset="/generated-images/journal/lomography-in-rome/rome-lomo-1-320by320-53a209.jpg 320w,
+                   /generated-images/journal/lomography-in-rome/rome-lomo-1-640by640-53a209.jpg 640w,
+                   /generated-images/journal/lomography-in-rome/rome-lomo-1-160by160-53a209.jpg 160w,
+                   /generated-images/journal/lomography-in-rome/rome-lomo-1-320by320-53a209.jpg 320w,
+                   /generated-images/journal/lomography-in-rome/rome-lomo-1-220by220-53a209.jpg 220w,
+                   /generated-images/journal/lomography-in-rome/rome-lomo-1-440by440-53a209.jpg 440w"
+           sizes="(min-width: 768px) 220px, (min-width: 480px) 160px, 100vw"
+           class="post-summary-image"
+           alt=""&gt;

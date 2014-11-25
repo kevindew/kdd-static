@@ -1,0 +1,26 @@
+section.slide-jekyll-turbo-responsive-images
+  h2 Responsive Images
+  h3 Config
+
+  pre
+    code.yml.
+      picture:
+        source: images/fullsize
+        output: generated-images
+        markup: img
+        presets:
+          post_summary_thumbnail:
+            ppi: [1, 2]
+            source_sm:
+              media: '(min-width: 768px)'
+              size: 220px
+              width: 220
+              height: 220
+            source_xs:
+              media: '(min-width: 480px)'
+              size: 160px
+              width: 160
+              height: 160
+            source_default:
+              width: 320
+              height: 320

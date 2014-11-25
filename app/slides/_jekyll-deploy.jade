@@ -1,0 +1,18 @@
+section.slide-jekyll-deploy
+  h2 Deploy
+
+  p.pre-description Just push to Github &#x1f60e;
+  pre.
+    $ git remote add origin https://github.com/kevindew/diy.kevindew.me.git
+    $ git push origin gh-pages
+
+  .fragment
+    p.pre-description We can specify a custom domain at it
+    h4.pre-description ./CNAME
+    pre.
+      diy.kevindew.me
+
+  .fragment
+    p.pre-description We can point a domain at it &#x1f4aa;
+    pre.
+      diy.kevindew.me.  10516 IN  CNAME kevindew.github.io.

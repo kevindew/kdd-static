@@ -1,0 +1,27 @@
+section.slide-jekyll-turbo-tag-generator
+  h2 Tag Generator
+
+  pre
+    code.ruby.
+      require 'stringex'
+
+      module DonnaCarter
+        class JournalTags &lt; Jekyll::Generator
+          def generate(site)
+            site.tags.keys.each do |tag|
+              slug = tag.to_url
+              paginate_tags(site, File.join('journal/tagged', slug), tag)
+            end
+          end
+
+          # ...
+
+          class TagIndex &lt; Jekyll::Page
+            def initialize(site, base, dir, tag, posts_count)
+              # generate page
+            end
+          end
+
+        end
+      end
+

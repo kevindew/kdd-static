@@ -1,0 +1,12 @@
+section.slide-jekyll-turbo-hosting
+  h2 Hosted on Github still
+
+  ul
+    li.fragment We have to build before pushing it
+    li.fragment We ignore dist directory
+    li.fragment Clone of serving branch inside dist directory
+    li.fragment We have a #[code .nojekyll] to stop github building it
+    li.fragment Deployed with #[a(href='https://github.com/robwierzbowski/grunt-build-control') grunt-build-control]
+      ul
+        li.fragment Creates commit
+        li.fragment Pushes to remote
