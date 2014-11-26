@@ -227,7 +227,8 @@ module.exports = function (grunt) {
             '<%= config.dist %>/styles/**/*.css',
             '<%= config.dist %>/images/**/*.*',
             '<%= config.dist %>/styles/fonts/**/*.*',
-            '<%= config.dist %>/bower_components/*/**/*.*'
+            '<%= config.dist %>/bower_components/*/**/*.*',
+            '!<%= config.dist %>/bower_components/reveal.js/plugin/notes/*'
           ]
         }
       }
@@ -354,6 +355,7 @@ module.exports = function (grunt) {
           src: [
             'bower_components/**/*.{eot,woff,woff2,svg,ttf,gif,jpeg,jpg,png}',
             '!bower_components/twemoji/**/*.{png,svg}',
+            'bower_components/reveal.js/plugin/notes/*'
           ]
         }]
       },
@@ -491,7 +493,10 @@ module.exports = function (grunt) {
             '!styles/fonts/**/*.*',
             '!bower_components/**/*.{eot,woff,woff2,svg,ttf,gif,jgp,jpeg,png}'
           ],
-          dest: ''
+          dest: '',
+          params: {
+            CacheControl: 'max-age=60'
+          }
         }]
       },
       cleanDist: {

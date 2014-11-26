@@ -1,15 +1,13 @@
 {
   "name": "reveal.js",
   "homepage": "https://github.com/hakimel/reveal.js",
-  "version": "2.6.2",
-  "_release": "2.6.2",
+  "_release": "8c76f85e34",
   "_resolution": {
-    "type": "version",
-    "tag": "2.6.2",
-    "commit": "9da952fea30906090446d038430186b11dba7f13"
+    "type": "branch",
+    "branch": "dev",
+    "commit": "8c76f85e34564e8fa2d38f2c2424ed4edc6d6c74"
   },
   "_source": "git://github.com/hakimel/reveal.js.git",
-  "_target": "~2.6.2",
-  "_originalSource": "reveal.js",
-  "_direct": true
+  "_target": "dev",
+  "_originalSource": "reveal.js"
 }
