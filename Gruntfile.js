@@ -464,7 +464,7 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          bucket: 'kdd-static'
+          bucket: 'kdd-static.kevindew.me'
         },
         files: [{
           expand: true,
