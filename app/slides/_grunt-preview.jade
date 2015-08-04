@@ -2,11 +2,12 @@ section#grunt-preview.slide-grunt-preview
   h2 Preview Version
   h4 A deployable compiled version of the app without performance tasks. Good for understanding the source
 
-  p.pre-description To Run:
-  pre
-    $ grunt serve:preview
+  .fragment
+    p.pre-description To Run:
+    pre
+      $ grunt serve:preview
 
-  ul(style='margin-top:1.5em')
-    li.fragment Compiles Jade, SASS and Coffeescript on change
-    li.fragment Files compiled to a preview directory
-    li.fragment Copies assets to preview directory
+    ul
+      li Compiles Jade, SASS and Coffeescript on build
+      li Files compiled to a preview directory
+      li Copies assets to preview directory

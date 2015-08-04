@@ -3,23 +3,26 @@ section#generating-structure.slide-generating-structure
   .col-container
     .col-left
       ul
+        li Generates project structure
         li Node.js #[abbr(title='Command line interface') CLI] tool
         li Prompts user
-        li Generates project structure
-    .col-right
-      .fragment
+        li Many generators available
+        li Not hard to make #[a(href='https://github.com/kevindew/generator-jade-preview', target='_blank') your own ]
+
+
+    .col-right.fragment
         h4 Install Yeoman
         pre.
           $ npm install -g yo
-      .fragment
         h4 Install generator
         pre.
           $ git clone git@github.com:kevindew/generator-jade-preview.git
           $ cd generator-jade-preview
           $ npm link
-      .fragment
         h4 Usage
         pre.
           $ mkdir my-project && cd $_
           $ yo generator-jade-preview
-          $ grunt:serve
+          $ grunt serve
+
+  aside.notes Mention downsides of making own generator

@@ -1,24 +1,33 @@
 section#grunt-tasks.slide-grunt-tasks
-  h2 Grunt Tasks
+  h2 Grunt Tasks Used
   .col-container
     .col-left
       ul
-        li watch
-        li connect
-        li clean
-        li jade
-        li coffee
-        li sass
-        li autoprefixer
-        li rev
+        li: a(href='https://github.com/gruntjs/grunt-contrib-watch',target='_blank') watch
+        li: a(href='https://github.com/gruntjs/grunt-contrib-connect',target='_blank') connect
+        li: a(href='https://github.com/gruntjs/grunt-contrib-clean',target='_blank') clean
+        li: a(href='https://github.com/gruntjs/grunt-contrib-jade',target='_blank') jade
+        li: a(href='https://github.com/gruntjs/grunt-contrib-coffee',target='_blank') coffee
+        li: a(href='https://github.com/gruntjs/grunt-contrib-sass',target='_blank') sass
+        li: a(href='https://github.com/nDmitry/grunt-autoprefixer',target='_blank') autoprefixer
+        li: a(href='https://github.com/cbas/grunt-rev',target='_blank') rev
 
     .col-right
       ul
-        li usemin
-        li imagemin
-        li svgmin
-        li htmlmin
-        li copy
-        li modernizr
-        li aws_s3
-        li ftp-deploy
+        li: a(href='https://github.com/yeoman/grunt-usemin',target='_blank') usemin
+        li: a(href='https://github.com/gruntjs/grunt-contrib-imagemin',target='_blank') imagemin
+        li: a(href='https://github.com/sindresorhus/grunt-svgmin',target='_blank') svgmin
+        li: a(href='https://github.com/gruntjs/grunt-contrib-htmlmin',target='_blank') htmlmin
+        li: a(href='https://github.com/gruntjs/grunt-contrib-copy',target='_blank') copy
+        li: a(href='https://github.com/Modernizr/grunt-modernizr',target='_blank') modernizr
+        li: a(href='https://github.com/MathieuLoutre/grunt-aws-s3',target='_blank') aws_s3
+        li: a(href='https://github.com/zonak/grunt-ftp-deploy',target='_blank') ftp-deploy
+
+  aside.notes
+    ul
+      li Watch for changes
+      li Connect to run as a server, livereload
+      li Rev for fingerprinting
+      li usemin for concatenation + minify
+      li modernizr for custom modernizr
+      li s3 + ftp deploy tasks

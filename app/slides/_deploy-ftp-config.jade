@@ -3,15 +3,6 @@ section#deploy-ftp-config.slide-deploy-ftp-config
   h4.pre-description gruntfile.js
   pre
     code.javascript.
-      // Gruntfile config
-      var config = {
-        // ...
-        preview: 'preview',
-        // ...
-        ftpJsonPath: '.ftp.json'
-      };
-  pre
-    code.javascript.
       'ftp-deploy': {
         preview: {
           auth: {
@@ -24,3 +15,12 @@ section#deploy-ftp-config.slide-deploy-ftp-config
           dest: 'kdd-preview'
         }
       }
+  pre
+    code.javascript.
+      // Gruntfile config
+      var config = {
+        // ...
+        preview: 'preview',
+        // ...
+        ftpJsonPath: '.ftp.json'
+      };
